@@ -15,7 +15,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 
-
 def getAPI():
     f = open('api_key.txt', 'r')
     return f.read()
@@ -187,13 +186,6 @@ def dashDisplay(df):
                       size_max=50, title='Relationship between champion kills and tower kills')
             )
         ),
-
-        html.Div(
-            dcc.Graph(id='correlation-matrix', figure=px.scatter(champion_to_towers, x='champion', y='tower', size='tower', color='champion', 
-                      size_max=50, title='Relationship between champion kills and tower kills')
-            )
-        ),
-
     ])
 
     @app.callback(
